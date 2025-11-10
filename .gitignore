@@ -1,0 +1,94 @@
+# Bazel build outputs
+bazel-*
+.bazel/
+
+# Compilation outputs
+*.o
+*.obj
+*.exe
+*.out
+*.app
+*.so
+*.dll
+*.dylib
+*.a
+*.lib
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+
+# OS files
+Thumbs.db
+Desktop.ini
+.Spotlight-V100
+.Trashes
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
+*.db
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*.cache
+.temp/
+tmp/
+
+# Test outputs
+test-results/
+coverage/
+*.gcda
+*.gcno
+*.gcov
+
+# Documentation builds
+docs/_build/
+site/
+
+# Personal notes and journals
+learning_journal.md
+personal_notes.txt
+
+# Environment and secrets
+.env
+.env.local
+secrets.txt
+credentials.json
+
+# macOS
+.AppleDouble
+.LSOverride
+Icon
+
+# Windows
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*

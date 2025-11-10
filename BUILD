@@ -25,14 +25,11 @@ filegroup(
     ],
 )
 
-# All safety components
+# Safety tools and frameworks
 filegroup(
-    name = "safety_components",
+    name = "safety_tools",
     srcs = [
-        "//src/watchdog:all",
-        "//src/diagnostics:all",
-        "//src/communication:all",
-        "//components:all",
+        "//tools/safety:all",
     ],
 )
 
@@ -48,15 +45,7 @@ filegroup(
     ],
 )
 
-# Safety analysis and reporting tools
-filegroup(
-    name = "safety_tools",
-    srcs = [
-        "//tools/hara_calculator:all",
-        "//tools/fmea_generator:all",
-        "//tools/coverage_analyzer:all",
-    ],
-)
+
 
 # Integration test suite
 filegroup(
@@ -72,9 +61,8 @@ filegroup(
     name = "automotive_safety_lab",
     srcs = [
         ":documentation",
-        ":safety_components", 
+        ":safety_tools", 
         ":all_exercises",
-        ":safety_tools",
         ":integration_tests",
     ],
 )

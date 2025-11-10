@@ -144,13 +144,7 @@ safety_analysis(
         "compliant.c", 
         "violation.c",
     ],
-    analysis_config = "//tools/safety:timing_analysis.json",
-    focus_areas = [
-        "timing_validation",
-        "watchdog_supervision", 
-        "deadline_monitoring",
-        "safe_state_transitions",
-    ],
+    asil_level = "A",
 )
 
 # Comprehensive safety report for Exercise 02

@@ -1,0 +1,16 @@
+"""
+Automotive Safety Lab - Bazel Module Configuration
+=================================================
+
+This module defines dependencies and configuration for the ISO 26262 
+educational platform using Bazel's modern module system (bzlmod).
+"""
+
+module(
+    name = "automotive_safety_lab",
+    version = "1.0.0",
+)
+
+# Note: Dependencies are managed through WORKSPACE file
+# This MODULE.bazel exists to satisfy bzlmod requirements
+# but actual dependencies are loaded via WORKSPACE for compatibility
