@@ -4,7 +4,7 @@ package(default_visibility = ["//visibility:public"])
 
 filegroup(
     name = "all_docs",
-    srcs = glob(["*.md"]),
+    srcs = ["iso26262_guide.md"],
 )
 
 filegroup(
@@ -12,12 +12,3 @@ filegroup(
     srcs = ["iso26262_guide.md"],
 )
 
-filegroup(
-    name = "troubleshooting",
-    srcs = ["TROUBLESHOOTING.md"],
-)
-
-filegroup(
-    name = "workflow_example",
-    srcs = ["WORKFLOW_EXAMPLE.md"],
-)

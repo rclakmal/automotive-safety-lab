@@ -1,183 +1,363 @@
-# Automotive Safety Lab
+# Automotive Safety Lab# Automotive Safety Lab
 
-*Interactive ISO 26262 Learning Platform for Safety Engineers*
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)](BUILD)
+
+*Learn ISO 26262 Functional Safety Through Hands-On Automotive Software Exercises**Interactive ISO 26262 Learning Platform for Safety Engineers*
+
+
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
+[![ISO 26262](https://img.shields.io/badge/ISO%2026262-2018-orange.svg)](https://www.iso.org/standard/68383.html)[![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)](BUILD)
+
 [![ISO 26262](https://img.shields.io/badge/ISO%2026262-2018-orange.svg)](https://www.iso.org/standard/68383.html)
 
 ---
 
+---
+
+## What You'll Learn
+
 ## 🎯 Welcome to Your Safety Engineering Journey
 
+Build safety-critical automotive software through **5 progressive exercises** from basic quality practices (ASIL QM) to critical systems (ASIL D). Each exercise uses real automotive scenarios: battery monitoring, engine control, braking systems, power steering, and autonomous emergency braking.
+
 This **interactive educational platform** guides you through ISO 26262:2018 functional safety principles using **hands-on exercises** with real automotive software components. Each exercise builds upon the previous one, taking you from basic safety concepts to **ASIL D critical systems**.
+
+**Total Time:** 20-26 hours | **No prior ISO 26262 experience required**
+
+---
 
 ---
 
 ## 🚀 Quick Start (Choose Your Path)
 
+## Prerequisites
+
 ### 👋 **I'm New Here**
-**Perfect!** Start with our comprehensive setup guide:
-- 📖 **[GETTING_STARTED.md](./GETTING_STARTED.md)** - Complete beginner's guide (30 min setup)
-- ✅ Run: `./scripts/verify_setup.ps1` (Windows) or `./scripts/verify_setup.sh` (Linux/Mac)
-- 🎓 Then: [Exercise 01: Basic Safety](./exercises/01_basic_safety/README.md)
 
-### 🏃 **I'm Ready to Code**
-**Awesome!** Quick setup (5 minutes):
-```bash
+### Required**Perfect!** Start with our comprehensive setup guide:
+
+- **Bazel** (6.0+): [bazel.build/install](https://bazel.build/install)- 📖 **[GETTING_STARTED.md](./GETTING_STARTED.md)** - Complete beginner's guide (30 min setup)
+
+- **GCC** (9+) or **Clang** (10+): [gcc.gnu.org](https://gcc.gnu.org/install/) | [llvm.org](https://llvm.org/)- ✅ Run: `./scripts/verify_setup.ps1` (Windows) or `./scripts/verify_setup.sh` (Linux/Mac)
+
+- **Git** (2.0+): [git-scm.com](https://git-scm.com/downloads)- 🎓 Then: [Exercise 01: Basic Safety](./exercises/01_basic_safety/README.md)
+
+
+
+### Optional### 🏃 **I'm Ready to Code**
+
+- **VS Code**: [code.visualstudio.com](https://code.visualstudio.com/)**Awesome!** Quick setup (5 minutes):
+
+- **Python** (3.8+): [python.org](https://www.python.org/downloads/)```bash
+
 # 1. Clone and enter directory
-git clone https://github.com/rclakmal/automotive-safety-lab.git && cd automotive-safety-lab
 
-# 2. Verify setup (checks Bazel, compiler, Git)
+**Windows Users:** Install [Git for Windows](https://git-scm.com/download/win) (includes Git Bash for tutorials)git clone https://github.com/rclakmal/automotive-safety-lab.git && cd automotive-safety-lab
+
+
+
+---# 2. Verify setup (checks Bazel, compiler, Git)
+
 ./scripts/verify_setup.sh  # Linux/Mac
-# OR
+
+## Quick Start# OR
+
 .\scripts\verify_setup.ps1  # Windows
 
-# 3. Build first exercise (requires C/C++ compiler)
-bazel build //exercises/01_basic_safety:all
+```bash
+
+# 1. Clone# 3. Build first exercise (requires C/C++ compiler)
+
+git clone https://github.com/rclakmal/automotive-safety-lab.gitbazel build //exercises/01_basic_safety:all
+
+cd automotive-safety-lab
 
 # 4. Start learning!
-bazel run //exercises/01_basic_safety:violation_example
+
+# 2. Verify setupbazel run //exercises/01_basic_safety:violation_example
+
+bazel --version  # Should show 6.0+```
+
+gcc --version    # Should show 9.0+
+
+git --version    # Should show 2.0+**Windows users:** You need MinGW/MSVC and Git Bash. See [GETTING_STARTED.md](./GETTING_STARTED.md) for installation.
+
+
+
+# 3. Build first exercise### 📚 **I Want to Learn ISO 26262 First**
+
+bazel build //exercises/01_basic_safety:all**Great approach!** Theory before practice:
+
+- � [ISO 26262 Foundation Guide](./docs/iso26262_guide.md) - Standard overview
+
+# 4. Run violation example- 🎯 [Learning Roadmap](#learning-roadmap) - See the complete progression
+
+bazel run //exercises/01_basic_safety:violation_example- 🛠️ [Workflow Example](./docs/WORKFLOW_EXAMPLE.md) - See how an exercise works
+
+
+
+# 5. Run compliant example  ### 🔧 **I Need Help**
+
+bazel run //exercises/01_basic_safety:compliant_example**We've got you covered:**
+
+- ❓ [Troubleshooting Guide](./docs/TROUBLESHOOTING.md) - Common issues & solutions
+
+# 6. Start interactive tutorial (requires bash)- 📊 Run: `./scripts/progress.sh` - Check your progress
+
+bash exercises/01_basic_safety/tutorial.sh- 💬 [GitHub Issues](https://github.com/rclakmal/automotive-safety-lab/issues) - Ask questions
+
 ```
 
-**Windows users:** You need MinGW/MSVC and Git Bash. See [GETTING_STARTED.md](./GETTING_STARTED.md) for installation.
-
-### 📚 **I Want to Learn ISO 26262 First**
-**Great approach!** Theory before practice:
-- � [ISO 26262 Foundation Guide](./docs/iso26262_guide.md) - Standard overview
-- 🎯 [Learning Roadmap](#learning-roadmap) - See the complete progression
-- 🛠️ [Workflow Example](./docs/WORKFLOW_EXAMPLE.md) - See how an exercise works
-
-### 🔧 **I Need Help**
-**We've got you covered:**
-- ❓ [Troubleshooting Guide](./docs/TROUBLESHOOTING.md) - Common issues & solutions
-- 📊 Run: `./scripts/progress.sh` - Check your progress
-- 💬 [GitHub Issues](https://github.com/rclakmal/automotive-safety-lab/issues) - Ask questions
+---
 
 ---
 
 ## 📊 Your Learning Path {#learning-roadmap}
 
+## Learning Path
+
 **Complete progression**: ASIL QM → ASIL A → ASIL B → ASIL C → ASIL D
 
-```
-┌─────────────────────────────────────────────────────────┐
-│  Exercise 01  →  Exercise 02  →  Exercise 03            │
+### Exercise 01: Basic Safety (ASIL QM) - 2-3 hours
+
+**Learn:** Defensive programming, error handling, input validation  ```
+
+**Scenario:** Battery voltage monitoring system  ┌─────────────────────────────────────────────────────────┐
+
+**Start:** `cd exercises/01_basic_safety && cat README.md`│  Exercise 01  →  Exercise 02  →  Exercise 03            │
+
 │  ASIL QM          ASIL A          ASIL B                │
-│  Basic Safety    Watchdog        Memory                 │
-│  (2-3 hrs)       (3-4 hrs)       (4-5 hrs)             │
-└─────────────────────────────────────────────────────────┘
-         ↓                 ↓
+
+### Exercise 02: Watchdog Timer (ASIL A) - 3-4 hours│  Basic Safety    Watchdog        Memory                 │
+
+**Learn:** Timing supervision, safe states, timeout handling  │  (2-3 hrs)       (3-4 hrs)       (4-5 hrs)             │
+
+**Scenario:** Engine control system  └─────────────────────────────────────────────────────────┘
+
+**Start:** `cd exercises/02_watchdog_timer && cat README.md`         ↓                 ↓
+
 ┌─────────────────────────────────────────────────────────┐
-│       Exercise 04         →        Exercise 05          │
-│       ASIL C                      ASIL D                │
-│       Redundancy & Voting         Critical Systems      │
-│       (5-6 hrs)                   (6-8 hrs)            │
+
+### Exercise 03: Memory Protection (ASIL B) - 4-5 hours│       Exercise 04         →        Exercise 05          │
+
+**Learn:** MPU configuration, stack protection, freedom from interference  │       ASIL C                      ASIL D                │
+
+**Scenario:** Electronic brake system  │       Redundancy & Voting         Critical Systems      │
+
+**Start:** `cd exercises/03_memory_protection && cat README.md`│       (5-6 hrs)                   (6-8 hrs)            │
+
 └─────────────────────────────────────────────────────────┘
 
-Total: ~20-26 hours to master automotive functional safety!
-```
+### Exercise 04: Redundancy & Voting (ASIL C) - 5-6 hours
+
+**Learn:** Dual-channel architecture, 2oo2 voting, cross-checking  Total: ~20-26 hours to master automotive functional safety!
+
+**Scenario:** Electric power steering  ```
+
+**Start:** `cd exercises/04_redundancy_voting && cat README.md`
 
 **Check your progress:** `./scripts/progress.sh` (or `.ps1` on Windows)
 
-## 🏗️ Project Structure
+### Exercise 05: Critical Systems (ASIL D) - 6-8 hours
 
-```
+**Learn:** Triple modular redundancy, formal verification, fail-operational design  ## 🏗️ Project Structure
+
+**Scenario:** Autonomous emergency braking  
+
+**Start:** `cd exercises/05_critical_systems && cat README.md````
+
 automotive-safety-lab/
-├── .github/                    # GitHub configuration and Copilot instructions
+
+---├── .github/                    # GitHub configuration and Copilot instructions
+
 ├── exercises/                  # Progressive ISO 26262 exercises
-│   ├── 01_basic_safety/        # ASIL QM - Basic safety concepts
+
+## Project Structure│   ├── 01_basic_safety/        # ASIL QM - Basic safety concepts
+
 │   ├── 02_watchdog_timer/      # ASIL A - Timing supervision
-│   ├── 03_memory_protection/   # ASIL B - Freedom from interference
-│   ├── 04_redundancy_voting/   # ASIL C - Redundancy and voting systems
-│   └── 05_critical_systems/    # ASIL D - Critical safety functions
-├── docs/                       # Educational materials and references
-│   ├── iso26262_guide.md       # ISO 26262 standard overview
-│   ├── TROUBLESHOOTING.md      # Common issues and solutions
-│   └── WORKFLOW_EXAMPLE.md     # Complete exercise walkthrough
-├── scripts/                    # Helper scripts for setup and progress
-│   ├── verify_setup.sh/.ps1    # Environment verification
-│   ├── quick_test.sh/.ps1      # Quick build test
-│   └── progress.sh/.ps1        # Learning progress tracker
-├── tests/                      # Comprehensive integration test suite
-│   └── integration/            # Cross-exercise validation tests
-├── tools/                      # Safety analysis and development tools
+
+```│   ├── 03_memory_protection/   # ASIL B - Freedom from interference
+
+automotive-safety-lab/│   ├── 04_redundancy_voting/   # ASIL C - Redundancy and voting systems
+
+├── exercises/│   └── 05_critical_systems/    # ASIL D - Critical safety functions
+
+│   ├── 01_basic_safety/       # ASIL QM├── docs/                       # Educational materials and references
+
+│   ├── 02_watchdog_timer/     # ASIL A│   ├── iso26262_guide.md       # ISO 26262 standard overview
+
+│   ├── 03_memory_protection/  # ASIL B│   ├── TROUBLESHOOTING.md      # Common issues and solutions
+
+│   ├── 04_redundancy_voting/  # ASIL C│   └── WORKFLOW_EXAMPLE.md     # Complete exercise walkthrough
+
+│   └── 05_critical_systems/   # ASIL D├── scripts/                    # Helper scripts for setup and progress
+
+├── docs/│   ├── verify_setup.sh/.ps1    # Environment verification
+
+│   └── iso26262_guide.md      # Standard overview│   ├── quick_test.sh/.ps1      # Quick build test
+
+├── tools/safety/              # Bazel safety rules│   └── progress.sh/.ps1        # Learning progress tracker
+
+├── BUILD                      # Main build config├── tests/                      # Comprehensive integration test suite
+
+└── WORKSPACE                  # Workspace config│   └── integration/            # Cross-exercise validation tests
+
+```├── tools/                      # Safety analysis and development tools
+
 │   └── safety/                 # Bazel safety analysis rules
-├── BUILD                       # Main Bazel build configuration
-├── WORKSPACE                   # Bazel workspace configuration
-├── GETTING_STARTED.md          # Beginner's setup guide (START HERE!)
-└── README.md                   # This file - project overview
-```
+
+Each exercise contains:├── BUILD                       # Main Bazel build configuration
+
+- `README.md` - Instructions and learning objectives├── WORKSPACE                   # Bazel workspace configuration
+
+- `violation.c` - Code with safety violations (what NOT to do)├── GETTING_STARTED.md          # Beginner's setup guide (START HERE!)
+
+- `compliant.c` - Proper implementation (best practices)└── README.md                   # This file - project overview
+
+- `tutorial.sh` - Interactive guided walkthrough```
+
+- `BUILD` - Bazel build configuration
 
 ## 🎓 Learning Objectives
 
-### ISO 26262 Fundamentals
-- Understanding functional safety concepts through hands-on exercises
-- ASIL classification from QM through D with progressive complexity
-- Safety lifecycle processes through practical implementation
-- Real-world automotive safety engineering practices
+---
 
-### Automotive Software Development
-- Safety-critical programming patterns with violation/compliant examples
-- Memory protection and interference freedom (ASIL B)
-- Redundancy and voting mechanisms (ASIL C) 
+### ISO 26262 Fundamentals
+
+## Common Issues- Understanding functional safety concepts through hands-on exercises
+
+- ASIL classification from QM through D with progressive complexity
+
+### "Command not found: bazel"- Safety lifecycle processes through practical implementation
+
+Install Bazel: https://bazel.build/install- Real-world automotive safety engineering practices
+
+
+
+### "Command not found: gcc"### Automotive Software Development
+
+- **Linux:** `sudo apt install build-essential`- Safety-critical programming patterns with violation/compliant examples
+
+- **macOS:** `xcode-select --install`- Memory protection and interference freedom (ASIL B)
+
+- **Windows:** Install [MinGW](https://sourceforge.net/projects/mingw-w64/) or [MSVC Build Tools](https://visualstudio.microsoft.com/downloads/)- Redundancy and voting mechanisms (ASIL C) 
+
 - Critical systems with formal verification (ASIL D)
 
-### Interactive Learning Experience
-- Progressive skill building from basic to master level
-- Real automotive scenarios (battery, brakes, steering, AEB)
-- Hands-on debugging and implementation challenges
-- Professional certification preparation
+### "Command not found: bash" (Windows)
 
-## 📚 Educational Progression
+Install [Git for Windows](https://git-scm.com/download/win) which includes Git Bash### Interactive Learning Experience
+
+- Progressive skill building from basic to master level
+
+### Build fails with "No such target"- Real automotive scenarios (battery, brakes, steering, AEB)
+
+```bash- Hands-on debugging and implementation challenges
+
+# Clean and rebuild- Professional certification preparation
+
+bazel clean --expunge
+
+bazel build //exercises/01_basic_safety:all## 📚 Educational Progression
+
+```
 
 The Automotive Safety Lab provides a complete learning journey through all automotive safety integrity levels:
 
-### **ASIL QM (Quality Management)** - Foundation
-- Basic safety concepts and defensive programming
-- Error handling and validation patterns
+### Tutorial script won't run
+
+```bash### **ASIL QM (Quality Management)** - Foundation
+
+# Make executable (Linux/Mac)- Basic safety concepts and defensive programming
+
+chmod +x exercises/01_basic_safety/tutorial.sh- Error handling and validation patterns
+
 - Battery monitoring system implementation
 
-### **ASIL A (Low Risk)** - Timing Safety
-- Watchdog timer systems and timing supervision  
-- Safe state transitions and timeout handling
-- Engine control system scenario
+# Run with bash explicitly (Windows)
 
-### **ASIL B (Medium Risk)** - Memory Protection
+bash exercises/01_basic_safety/tutorial.sh### **ASIL A (Low Risk)** - Timing Safety
+
+```- Watchdog timer systems and timing supervision  
+
+- Safe state transitions and timeout handling
+
+---- Engine control system scenario
+
+
+
+## ISO 26262 Overview### **ASIL B (Medium Risk)** - Memory Protection
+
 - Memory Protection Unit (MPU) configuration
-- Stack protection and heap isolation
-- Freedom from interference mechanisms
-- Electronic brake system scenario
+
+**ISO 26262** is the functional safety standard for automotive electrical/electronic systems. It defines:- Stack protection and heap isolation
+
+- **ASIL Levels:** QM (no risk) → A (low) → B (medium) → C (high) → D (critical)- Freedom from interference mechanisms
+
+- **Safety Lifecycle:** Concept → Development → Production → Operation- Electronic brake system scenario
+
+- **Requirements:** Hardware diagnostic coverage, software metrics, verification methods
 
 ### **ASIL C (High Risk)** - Redundancy Systems
-- Dual-channel architectures with cross-checking
+
+**Learn More:** Read `docs/iso26262_guide.md` for detailed standard explanation- Dual-channel architectures with cross-checking
+
 - 2-out-of-2 voting mechanisms
-- Comprehensive diagnostic coverage
+
+---- Comprehensive diagnostic coverage
+
 - Electric power steering system scenario
 
+## Safety Disclaimer
+
 ### **ASIL D (Highest Risk)** - Critical Systems
-- Triple Modular Redundancy (TMR) with diverse programming
+
+⚠️ **This is an educational platform.** Code examples are simplified for learning and must not be used in production systems without proper safety assessment, verification, certification, and compliance with applicable standards.- Triple Modular Redundancy (TMR) with diverse programming
+
 - Formal verification and mathematical proofs
-- Fail-operational design patterns
+
+Real automotive safety systems require professional engineering, extensive testing, and formal certification processes.- Fail-operational design patterns
+
 - Autonomous emergency braking scenario
+
+---
 
 ## 🗺️ **Detailed Exercise Breakdown**
 
+## Contributing
+
 ### **Phase 1: Foundation (ASIL QM)** 📚
-**Goal**: Understand basic safety concepts and quality practices
 
-🔗 **[Exercise 01: Basic Safety Concepts](./exercises/01_basic_safety/README.md)**
-- Learn fundamental ISO 26262 principles
+Contributions improving educational value are welcome. Please ensure:**Goal**: Understand basic safety concepts and quality practices
+
+- Code follows automotive safety principles
+
+- Examples are well-documented with clear explanations🔗 **[Exercise 01: Basic Safety Concepts](./exercises/01_basic_safety/README.md)**
+
+- Changes maintain progressive learning structure- Learn fundamental ISO 26262 principles
+
 - Practice defensive programming
-- Compare violation vs. compliant code
-- **Interactive**: Fix battery monitoring system
-- **Time**: 2-3 hours
 
-### **Phase 2: Timing Safety (ASIL A)** ⏱️
+---- Compare violation vs. compliant code
+
+- **Interactive**: Fix battery monitoring system
+
+## License- **Time**: 2-3 hours
+
+
+
+MIT License - See [LICENSE](LICENSE) for details### **Phase 2: Timing Safety (ASIL A)** ⏱️
+
 **Goal**: Implement timing supervision and watchdog mechanisms
 
+---
+
 🔗 **[Exercise 02: Watchdog Timer Systems](./exercises/02_watchdog_timer/README.md)**
-- Master watchdog timer implementation
+
+**Ready to start?** Run `bazel build //exercises/01_basic_safety:all` and begin your safety engineering journey!- Master watchdog timer implementation
+
 - Learn timing failure detection
 - Practice safe state transitions
 - **Interactive**: Debug timing violations
