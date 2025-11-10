@@ -12,6 +12,8 @@ This **interactive educational platform** guides you through ISO 26262:2018 func
 
 **Ready to code?** Jump to: [🔧 Exercise 01: Basic Safety Concepts](./exercises/01_basic_safety/README.md)
 
+**Complete learning path**: ASIL QM → ASIL A → ASIL B → ASIL C → ASIL D (Full progression available!)
+
 **Want the big picture?** See: [🗺️ Complete Learning Roadmap](#learning-roadmap)
 
 ## 🏗️ Project Structure
@@ -25,11 +27,11 @@ automotive-safety-lab/
 │   ├── communication/         # CAN/Ethernet communication stacks
 │   └── state_machines/        # Safety state machine implementations
 ├── exercises/                  # Progressive ISO 26262 exercises
-│   ├── 01_basic_safety/       # ASIL QM - Basic safety concepts
-│   ├── 02_watchdog_timer/     # ASIL A - Timing supervision
-│   ├── 03_memory_protection/  # ASIL B - Freedom from interference
-│   ├── 04_redundancy/         # ASIL C - Redundant systems
-│   └── 05_autonomous_systems/ # ASIL D - Critical safety functions
+│   ├── 01_basic_safety/        # ASIL QM - Basic safety concepts
+│   ├── 02_watchdog_timer/      # ASIL A - Timing supervision
+│   ├── 03_memory_protection/   # ASIL B - Freedom from interference
+│   ├── 04_redundancy_voting/   # ASIL C - Redundancy and voting systems
+│   └── 05_critical_systems/    # ASIL D - Critical safety functions
 ├── components/                # Reusable automotive components
 │   ├── sensors/               # Sensor interfaces and validation
 │   ├── actuators/             # Actuator control and feedback
@@ -139,25 +141,27 @@ automotive-safety-lab/
 - **Interactive**: Fix memory corruption bugs
 - **Time**: 4-5 hours
 
-### **Phase 4: Redundancy (ASIL C)** 🔄
-**Goal**: Build fault-tolerant systems with redundancy
+### **Phase 4: Redundancy & Voting (ASIL C)** 🔄
+**Goal**: Build fault-tolerant systems with dual-channel redundancy
 
-🔗 **[Exercise 04: Dual-Channel Systems](./exercises/04_redundancy/README.md)**
-- Design redundant architectures
-- Implement cross-checking mechanisms
-- Practice diagnostic coverage analysis
-- **Interactive**: Build voting systems
+🔗 **[Exercise 04: Redundancy & Voting Systems](./exercises/04_redundancy_voting/README.md)**
+- Design dual-channel redundant architectures
+- Implement cross-checking and plausibility analysis
+- Master 2-out-of-2 voting mechanisms
+- Practice comprehensive diagnostic coverage
+- **Interactive**: Build electric power steering with voting
 - **Time**: 5-6 hours
 
-### **Phase 5: Critical Systems (ASIL D)** 🚨
-**Goal**: Master highest safety integrity systems
+### **Phase 5: Critical Systems (ASIL D)** 🎖️
+**Goal**: Master the highest automotive safety integrity level
 
-🔗 **[Exercise 05: Autonomous Emergency Braking](./exercises/05_autonomous_systems/README.md)**
-- Implement ASIL D safety mechanisms
-- Master formal verification techniques
-- Practice safety case development
-- **Interactive**: Build life-critical system
-- **Time**: 8-10 hours
+🔗 **[Exercise 05: Critical Systems (ASIL D)](./exercises/05_critical_systems/README.md)**
+- Implement Triple Modular Redundancy (TMR)
+- Master formal verification and mathematical proofs
+- Apply diverse programming techniques
+- Build fail-operational systems
+- **Interactive**: Create autonomous emergency braking system
+- **Time**: 6-8 hours
 
 ## 🔧 **Quick Setup Guide**
 
@@ -169,9 +173,9 @@ automotive-safety-lab/
 
 ### **30-Second Setup**
 ```bash
-# 1. Clone the repository
-git clone <repository-url>
-cd ISO26262
+# Clone the repository
+git clone https://github.com/rclakmal/automotive-safety-lab.git
+cd automotive-safety-lab
 
 # 2. Install Bazel (if not already installed)
 # Follow: https://bazel.build/install

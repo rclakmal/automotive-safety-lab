@@ -43,8 +43,8 @@ filegroup(
         "//exercises/01_basic_safety:all",
         "//exercises/02_watchdog_timer:all",
         "//exercises/03_memory_protection:all",
-        "//exercises/04_redundancy:all",
-        "//exercises/05_autonomous_systems:all",
+        "//exercises/04_redundancy_voting:all",
+        "//exercises/05_critical_systems:all",
     ],
 )
 
@@ -58,13 +58,23 @@ filegroup(
     ],
 )
 
+# Integration test suite
+filegroup(
+    name = "integration_tests",
+    srcs = [
+        "//tests/integration:all_integration_tests",
+        "//tests/integration:cross_exercise_tests",
+    ],
+)
+
 # Complete safety laboratory target
 filegroup(
-    name = "iso26262_lab",
+    name = "automotive_safety_lab",
     srcs = [
         ":documentation",
         ":safety_components", 
         ":all_exercises",
         ":safety_tools",
+        ":integration_tests",
     ],
 )
