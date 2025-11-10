@@ -19,20 +19,21 @@ Build safety-critical automotive software through **5 progressive exercises** fr
 
 ### Required Tools
 - **Bazel** (6.0+) - [Installation Guide](https://bazel.build/install)
-- **GCC** (9+) or **Clang** (10+) - [GCC Download](https://gcc.gnu.org/install/) | [LLVM Download](https://llvm.org/)
+- **C/C++ Compiler:**
+  - **Windows:** [Visual Studio Build Tools](https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2022) (recommended) or [MinGW-w64](https://sourceforge.net/projects/mingw-w64/)
+  - **Linux:** GCC 9+ via `sudo apt install build-essential`
+  - **macOS:** Clang via `xcode-select --install`
 - **Git** (2.0+) - [Download Git](https://git-scm.com/downloads)
+  - **Windows:** Install [Git for Windows](https://git-scm.com/download/win) which includes Git Bash
 
 ### Optional Tools
 - **VS Code** - [Download](https://code.visualstudio.com/)
 - **Python** (3.8+) - [Download](https://www.python.org/downloads/)
 
-**Windows Users:** Install [Git for Windows](https://git-scm.com/download/win) which includes Git Bash for running tutorials.
-
 ---
 
 ## Quick Start
 
-### Linux/macOS (with Bazel)
 ```bash
 # 1. Clone the repository
 git clone https://github.com/rclakmal/automotive-safety-lab.git
@@ -40,37 +41,18 @@ cd automotive-safety-lab
 
 # 2. Verify prerequisites
 bazel --version
-gcc --version
+gcc --version  # or 'cl' on Windows with MSVC
 git --version
 
 # 3. Build and run first exercise
 bazel run //exercises/01_basic_safety:violation_example
 bazel run //exercises/01_basic_safety:compliant_example
 
-# 4. Start interactive tutorial
+# 4. Start interactive tutorial (requires bash)
 bash exercises/01_basic_safety/tutorial.sh
 ```
 
-### Windows (with MinGW GCC)
-```powershell
-# 1. Clone the repository
-git clone https://github.com/rclakmal/automotive-safety-lab.git
-cd automotive-safety-lab
-
-# 2. Verify prerequisites
-gcc --version
-git --version
-
-# 3. Compile and run first exercise
-cd exercises\01_basic_safety
-gcc -std=c99 -o violation_example.exe violation.c
-.\violation_example.exe
-
-# 4. Start interactive tutorial (requires Git Bash)
-bash tutorial.sh
-```
-
-> **Note for Windows users:** Bazel on Windows requires Visual Studio Build Tools. If you only have MinGW, you can compile exercises directly with gcc as shown above.
+> **Windows users:** Bazel works best with [Visual Studio Build Tools](https://visualstudio.microsoft.com/downloads/#build-tools-for-visual-studio-2022). During installation, select "Desktop development with C++" workload. Use Git Bash (included with Git for Windows) to run tutorial scripts.
 
 ---
 
