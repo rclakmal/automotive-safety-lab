@@ -71,6 +71,8 @@ echo "build --noenable_bzlmod" >> .bazelrc
 
 #### Problem: `gcc: command not found` or `clang: command not found`
 
+> **🎒 No Admin Rights?** See [Portable Setup Guide](./PORTABLE_SETUP.md) for installing MinGW GCC without administrator privileges!
+
 **Solution:**
 
 **Linux (Ubuntu/Debian):**

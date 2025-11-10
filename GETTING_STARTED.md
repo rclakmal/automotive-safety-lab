@@ -47,6 +47,9 @@ Before starting, ensure you have these tools installed:
 
 ## 🛠️ Step 2: Install Prerequisites
 
+> **🎒 No Administrator Rights?**  
+> See our [Portable Setup Guide](./docs/PORTABLE_SETUP.md) for installing all tools without admin access or Chocolatey!
+
 ### Windows
 
 **First, install Chocolatey package manager (if not already installed):**

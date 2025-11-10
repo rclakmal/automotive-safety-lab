@@ -224,6 +224,8 @@ The Automotive Safety Lab provides a complete learning journey through all autom
 - **C/C++ Compiler**: GCC 9+ or Clang 10+
 - **Git**: Version control (2.0+)
 
+> **💡 No Admin Rights?** Check out our [Portable Setup Guide](./docs/PORTABLE_SETUP.md) for installing everything without administrator privileges!
+
 ### **Optional Tools** (Recommended)
 - **VS Code**: IDE with excellent C/C++ support
 - **cppcheck**: Static analysis for C/C++
