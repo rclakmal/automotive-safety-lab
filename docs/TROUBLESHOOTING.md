@@ -91,10 +91,16 @@ brew install gcc
 
 **Windows:**
 ```powershell
-# Install MinGW via Chocolatey
+# Option 1: Install MinGW via Chocolatey
 choco install mingw
 
-# Or download from: https://sourceforge.net/projects/mingw-w64/
+# Option 2: Direct download from SourceForge
+# Download from: https://sourceforge.net/projects/mingw-w64/
+# Install and add to PATH
+
+# If you don't have Chocolatey, install it first:
+# Open PowerShell as Administrator and run:
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 ```
 
 ### Compiler Version Too Old
@@ -152,6 +158,32 @@ chmod +x scripts/*.sh
 # Run the script
 ./scripts/verify_setup.sh
 ```
+
+### Bash Not Found on Windows
+
+#### Problem: `bash: command not found` or interactive tutorials fail to run
+
+**Cause:** Windows doesn't include bash by default
+
+**Solution:**
+```powershell
+# Option 1: Install Git (includes Git Bash) - RECOMMENDED
+choco install git
+
+# Option 2: Use Windows Subsystem for Linux (WSL)
+wsl --install
+
+# Option 3: Manual Git installation
+# Download from: https://git-scm.com/download/win
+# Make sure to select "Git Bash" during installation
+
+# Verify installation
+bash --version
+```
+
+**After installing Git Bash:**
+- Use "Git Bash" terminal instead of PowerShell for tutorials
+- Or run tutorials with: `bash ./exercises/01_basic_safety/tutorial.sh`
 
 ---
 

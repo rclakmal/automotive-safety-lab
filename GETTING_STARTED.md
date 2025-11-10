@@ -31,6 +31,9 @@ Before starting, ensure you have these tools installed:
 | **Bazel** | 6.0+ | Build system | `bazel --version` |
 | **GCC/Clang** | GCC 9+ or Clang 10+ | C/C++ compiler | `gcc --version` or `clang --version` |
 | **Git** | 2.0+ | Version control | `git --version` |
+| **Bash** (Windows) | Any | Run tutorial scripts | `bash --version` (Git Bash) |
+
+**Note for Windows users:** Git installation includes Git Bash, which is needed for interactive tutorials.
 
 ### Optional But Recommended
 
@@ -46,6 +49,14 @@ Before starting, ensure you have these tools installed:
 
 ### Windows
 
+**First, install Chocolatey package manager (if not already installed):**
+
+Open PowerShell as Administrator and run:
+```powershell
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+```
+
+**Then install required tools:**
 ```powershell
 # Install Bazel using Chocolatey
 choco install bazel
@@ -53,10 +64,19 @@ choco install bazel
 # Install MinGW GCC
 choco install mingw
 
+# Install Git (includes Git Bash for running tutorial scripts)
+choco install git
+
 # Verify installations
 bazel --version
 gcc --version
+git --version
 ```
+
+**Alternative (without Chocolatey):**
+- **Bazel**: Download from https://github.com/bazelbuild/bazel/releases
+- **MinGW GCC**: Download from https://sourceforge.net/projects/mingw-w64/
+- **Git**: Download from https://git-scm.com/download/win
 
 ### macOS
 
@@ -160,6 +180,9 @@ bazel build //...
 
 # Expected: All targets build successfully ✅
 ```
+
+**⚠️ Important Note for Windows Users:**
+If you see "Build completed successfully" but don't have a C/C++ compiler installed, Bazel is only building configuration files. You need a compiler (MinGW/MSVC) to actually compile the C code. Run `scripts\verify_setup.ps1` to check your setup.
 
 **Quick test** (faster, just the first exercise):
 ```bash

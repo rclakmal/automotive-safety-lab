@@ -28,17 +28,19 @@ This **interactive educational platform** guides you through ISO 26262:2018 func
 # 1. Clone and enter directory
 git clone https://github.com/rclakmal/automotive-safety-lab.git && cd automotive-safety-lab
 
-# 2. Verify setup
+# 2. Verify setup (checks Bazel, compiler, Git)
 ./scripts/verify_setup.sh  # Linux/Mac
 # OR
 .\scripts\verify_setup.ps1  # Windows
 
-# 3. Build first exercise
+# 3. Build first exercise (requires C/C++ compiler)
 bazel build //exercises/01_basic_safety:all
 
 # 4. Start learning!
 bazel run //exercises/01_basic_safety:violation_example
 ```
+
+**Windows users:** You need MinGW/MSVC and Git Bash. See [GETTING_STARTED.md](./GETTING_STARTED.md) for installation.
 
 ### 📚 **I Want to Learn ISO 26262 First**
 **Great approach!** Theory before practice:
