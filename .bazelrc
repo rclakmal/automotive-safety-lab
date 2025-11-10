@@ -1,0 +1,25 @@
+# Bazel configuration for ISO26262 Safety Lab
+# ===========================================
+
+# Use MinGW compiler on Windows
+build --compiler=mingw-gcc
+build --host_compiler=mingw-gcc
+
+# Set MinGW path
+build --action_env=PATH=C:/MinGW/bin
+
+# C/C++ standard settings
+build --cxxopt=-std=c++14
+build --copt=-std=c99
+
+# General build settings
+build --enable_platform_specific_config
+build --incompatible_enable_cc_toolchain_resolution
+
+# Optimization and debugging
+build --compilation_mode=opt
+build:debug --compilation_mode=dbg
+
+# Test settings
+test --test_output=errors
+test --test_verbose_timeout_warnings

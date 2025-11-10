@@ -32,6 +32,7 @@ Build safety-critical automotive software through **5 progressive exercises** fr
 
 ## Quick Start
 
+### Linux/macOS (with Bazel)
 ```bash
 # 1. Clone the repository
 git clone https://github.com/rclakmal/automotive-safety-lab.git
@@ -42,18 +43,34 @@ bazel --version
 gcc --version
 git --version
 
-# 3. Build first exercise
-bazel build //exercises/01_basic_safety:all
-
-# 4. Run violation example
+# 3. Build and run first exercise
 bazel run //exercises/01_basic_safety:violation_example
-
-# 5. Run compliant example
 bazel run //exercises/01_basic_safety:compliant_example
 
-# 6. Start interactive tutorial (requires bash)
+# 4. Start interactive tutorial
 bash exercises/01_basic_safety/tutorial.sh
 ```
+
+### Windows (with MinGW GCC)
+```powershell
+# 1. Clone the repository
+git clone https://github.com/rclakmal/automotive-safety-lab.git
+cd automotive-safety-lab
+
+# 2. Verify prerequisites
+gcc --version
+git --version
+
+# 3. Compile and run first exercise
+cd exercises\01_basic_safety
+gcc -std=c99 -o violation_example.exe violation.c
+.\violation_example.exe
+
+# 4. Start interactive tutorial (requires Git Bash)
+bash tutorial.sh
+```
+
+> **Note for Windows users:** Bazel on Windows requires Visual Studio Build Tools. If you only have MinGW, you can compile exercises directly with gcc as shown above.
 
 ---
 

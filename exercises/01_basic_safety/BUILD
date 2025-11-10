@@ -1,25 +1,25 @@
 # BUILD file for Exercise 01: Basic Safety Concepts
 # ================================================
 
-load("//tools/safety:safety_rules.bzl", "safety_cc_binary", "safety_analysis")
+load("//tools/safety:safety_rules.bzl", "safety_analysis")
 
 package(default_visibility = ["//visibility:public"])
 
 # Violation example - demonstrates poor practices
-safety_cc_binary(
+cc_binary(
     name = "violation_example",
     srcs = ["violation.c"],
-    asil_level = "QM",
     copts = [
+        "-std=c99",
         "-Wno-error",  # Allow compilation despite warnings for educational purposes
     ],
 )
 
 # Compliant example - demonstrates good practices  
-safety_cc_binary(
+cc_binary(
     name = "compliant_example", 
     srcs = ["compliant.c"],
-    asil_level = "QM",
+    copts = ["-std=c99"],
 )
 
 # Interactive tutorial runner
